@@ -265,7 +265,7 @@ public class C3dReader {
 		}
 
 		if (!_nameToGroups.containsKey(elements[0]))
-			throw new Exception("Group " + elements[0] + " deasn't exist.");
+			throw new Exception("Group " + elements[0] + " doesn't exist.");
 
 		ParameterGroup grp = _nameToGroups.get(elements[0]);
 
@@ -274,7 +274,7 @@ public class C3dReader {
 				return klass.cast(p.GetData(klass));
 			}
 		}
-		throw new Exception("Parameter " + elements[1] + " deasn't exist.");
+		throw new Exception("Parameter " + elements[1] + " doesn't exist.");
 	}
 
 	public boolean parameterExists(String path) {
@@ -285,7 +285,7 @@ public class C3dReader {
 		}
 
 		if (!_nameToGroups.containsKey(elements[0])) {
-			System.err.print("Group " + elements[0] + " deasn't exist.");
+			System.err.print("Group " + elements[0] + " doesn't exist.");
 			return false;
 		}
 
