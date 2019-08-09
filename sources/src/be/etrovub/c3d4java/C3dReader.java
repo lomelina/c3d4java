@@ -369,11 +369,11 @@ public class C3dReader {
 
 		_points = new Vector3[_pointsNumber];
 		for (int i = 0; i < _pointsNumber; i++) {
-			_points[i] = new Vector3(_reader.readShort() * _pointScale,
-					_reader.readShort() * _pointScale, _reader.readShort()
-							* _pointScale);
-			//int cc = 
-			_reader.readShort();	//DO NOT COMMENT OUT
+			_points[i] = new Vector3(
+					BitConverter.readShortLE(_reader) * _pointScale,
+					BitConverter.readShortLE(_reader) * _pointScale, 
+					BitConverter.readShortLE(_reader) * _pointScale,
+					BitConverter.readShortLE(_reader) * _pointScale);
 		}
 
 		// reading of analog data

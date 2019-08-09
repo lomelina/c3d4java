@@ -15,6 +15,8 @@
  *******************************************************************************/
 package be.etrovub.c3d4java;
 
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.io.UnsupportedEncodingException;
 import java.util.UUID;
 
@@ -148,5 +150,11 @@ public final class BitConverter {
 		}
 
 		return new UUID(msb, lsb);
+	}
+	
+	public static short readShortLE(RandomAccessFile file) throws IOException {
+		byte [] buf = new byte[2];
+		file.read(buf);
+		return toInt16(buf, 0);
 	}
 }
